@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>let see if your password meets the requirements</h1>
+{% if is_valid %}
+    <p>Your password passed the 3 requirements!</p>
+{% else %}
+    <p>Oh no! Looks like you had issues with your password!</p>
+    <p>Here are the requirements you failed:</p>
+        {% if is_valid1 %}
+        <p>You did not use a lower case letter.</p>
+        {% endif %}
+        {% if is_valid2 %}
+        <p>You did not use an upper case letter.</p>
+        {% endif %}
+        {% if is_valid3 %}
+        <p>You did not end username with a number.</p>
+        {% endif %}
+        {% if is_valid3 %}
+        <p>Password length should be greater than or equal to 8.</p>
+        {% endif %}
+{% endif %}
+{% endblock %}
